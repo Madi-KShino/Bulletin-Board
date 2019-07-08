@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Message View Controller-->
         <scene sceneID="SRX-8r-689">
             <objects>
-                <viewController id="DGA-Mo-8eO" sceneMemberID="viewController">
+                <viewController id="DGA-Mo-8eO" customClass="MessageViewController" customModule="BulletinBoard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PLa-aa-GOv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="21F-mq-gaG" detailTextLabel="KAc-pA-2w3" rowHeight="79" style="IBUITableViewCellStyleSubtitle" id="vXE-AD-5Dn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="messageCell" textLabel="21F-mq-gaG" detailTextLabel="KAc-pA-2w3" rowHeight="79" style="IBUITableViewCellStyleSubtitle" id="vXE-AD-5Dn">
                                         <rect key="frame" x="0.0" y="84" width="414" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vXE-AD-5Dn" id="yR4-W9-Kkx">
@@ -78,8 +78,16 @@
                         <viewLayoutGuide key="safeArea" id="s0w-2U-sYY"/>
                     </view>
                     <navigationItem key="navigationItem" id="DHR-uI-7Wh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="teb-bU-jcK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="teb-bU-jcK">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="DGA-Mo-8eO" id="BE3-LS-D0p"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="messageTextField" destination="bB2-gb-oxc" id="f5d-Ll-RcK"/>
+                        <outlet property="tableView" destination="U56-0u-qIK" id="IDN-dy-ug6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IL2-Ea-jTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
